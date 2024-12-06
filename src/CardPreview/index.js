@@ -15,7 +15,7 @@ const CardContainer = styled.div`
 `;
 
 CardContainer.defaultProps = {
-  Layout: {
+  layout: {
     width: "18rem",
     height: "10rem",
     direction: "row"
@@ -67,17 +67,7 @@ const CardLabel = styled.div`
   font-weight: 700;
 `;
 
-const Card = ({
-  firstName,
-  surname,
-  website,
-  company,
-  phone,
-  imageUrl,
-  bgColor,
-  layout,
-  font
-}) => {
+const Card = ({ cardData: { imageUrl, firstName, surname, phone, company, bgColor, layout, font } }) => {
   const cardLogo =
     imageUrl || "https://placehold.jp/dadee7/4a4a4a/120x120.png?text=LOGO";
   const fullName = firstName + " " + surname;

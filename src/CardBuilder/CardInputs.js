@@ -19,10 +19,18 @@ const CardInputs = ({ handleFileInputChange, handleInputChange }) => {
         Company Name:
         <Input name="company" type="text" onChange={handleInputChange} />
       </Label>
-
       <Label htmlFor="imageUrl">
         Image URL:
-        <Input name="imageUrl" type="url" onChange={handleFileInputChange} />
+        <Input name="imageUrl" type="url" onChange={handleInputChange} />
+      </Label>
+      <Label htmlFor="imageFile">
+        Or Upload Image:
+        <Input
+          name="imageFile"
+          type="file"
+          accept="image/*"
+          onChange={handleFileInputChange}
+        />
       </Label>
     </CardFieldsContainer>
   );

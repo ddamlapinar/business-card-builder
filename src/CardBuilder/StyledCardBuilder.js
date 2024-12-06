@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardFieldsContainer = styled.div`
+const CardFieldsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@ export const CardFieldsContainer = styled.div`
   }
 `;
 
-export const Input = styled.input`
+const Input = styled.input`
   width: 320px;
   background: #fff;
   border: 1px ${(props) => (props.isFileInput ? "dashed" : "solid")} #c8ceed;
@@ -22,7 +22,7 @@ export const Input = styled.input`
   grid-column: ${(props) => (props.isFileInput ? "1fr" : "2fr")};
 `;
 
-export const Label = styled.label`
+const Label = styled.label`
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -33,25 +33,25 @@ export const Label = styled.label`
   font-weight: 700;
 `;
 
-export const OptionsContainer = styled.div`
+const OptionsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
 `;
 
-export const OptionContainer = styled.div`
+const OptionContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 4px;
 `;
 
-export const OptionLabel = styled.label`
+const OptionLabel = styled.label`
   font-size: 16px;
   font-weight: 500;
 `;
 
-export const ColorPickerButton = styled.button`
+const ColorPickerButton = styled.button`
   width: 25px;
   height: 25px;
   border: 2px solid #fff;
@@ -65,7 +65,7 @@ export const ColorPickerButton = styled.button`
   }
 `;
 
-export const LayoutPickerButton = styled.button`
+const LayoutPickerButton = styled.button`
   min-height: 25px;
   padding: 5px 10px;
   border-radius: 4px;
@@ -78,3 +78,5 @@ export const LayoutPickerButton = styled.button`
     color: #fff;
   }
 `;
+
+export { CardFieldsContainer, Input, Label, OptionsContainer, OptionContainer, OptionLabel, ColorPickerButton, LayoutPickerButton };

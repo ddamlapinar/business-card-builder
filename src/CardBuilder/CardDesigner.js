@@ -8,23 +8,21 @@ import {
 import { GradientConstants, LayoutConstants } from "../theme";
 import FontPicker from "./FontPicker";
 const CardDesigner = ({
-  layout,
-  bgColor,
-  setFont,
-  setBgGradient,
-  setLayout
+  cardData: { bgColor, layout },
+  setCardData
 }) => {
-  const handleSelectFont = (e) => {
+
+  const handleFontChange = (e) => {
     const value = e.target.value;
-    setFont(value);
+    setCardData(prev => ({ ...prev, font: value }));
   };
 
-  const changeColor = (gradient) => {
-    setBgGradient(GradientConstants[gradient]);
+  const handleColorChange = (gradient) => {
+    setCardData(prev => ({ ...prev, bgColor: GradientConstants[gradient] }));
   };
 
-  const changeLayout = (layout) => {
-    setLayout(LayoutConstants[layout]);
+  const handleLayoutChange = (layout) => {
+    setCardData(prev => ({ ...prev, layout: LayoutConstants[layout] }));
   };
   return (
     <OptionsContainer>
@@ -35,7 +33,7 @@ const CardDesigner = ({
           type="color"
           color={GradientConstants.Gray}
           value={bgColor}
-          onClick={() => changeColor("Gray")}
+          onClick={() => handleColorChange("Gray")}
         />
         <ColorPickerButton
           className={`${
@@ -43,7 +41,7 @@ const CardDesigner = ({
           }`}
           color={GradientConstants.Purple}
           value={bgColor}
-          onClick={() => changeColor("Purple")}
+          onClick={() => handleColorChange("Purple")}
         />
       </OptionContainer>
       <OptionContainer>
@@ -57,7 +55,7 @@ const CardDesigner = ({
               : ""
           }`}
           layoutType={LayoutConstants.Horizontal}
-          onClick={() => changeLayout("Horizontal")}
+          onClick={() => handleLayoutChange("Horizontal")}
         >
           Horizontal
         </LayoutPickerButton>
@@ -66,14 +64,14 @@ const CardDesigner = ({
             layout === LayoutConstants.Vertical ? "activeLayout" : ""
           }`}
           layoutType={LayoutConstants.Vertical}
-          onClick={() => changeLayout("Vertical")}
+          onClick={() => handleLayoutChange("Vertical")}
         >
           Vertical
         </LayoutPickerButton>
       </OptionContainer>
       <OptionContainer>
         <OptionLabel>Font</OptionLabel>
-        <FontPicker onSelectFont={handleSelectFont} />
+        <FontPicker onSelectFont={handleFontChange} />
       </OptionContainer>
     </OptionsContainer>
   );

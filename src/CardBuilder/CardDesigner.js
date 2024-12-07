@@ -24,50 +24,36 @@ const CardDesigner = ({
   const handleLayoutChange = (layout) => {
     setCardData(prev => ({ ...prev, layout: LayoutConstants[layout] }));
   };
+
+
   return (
     <OptionsContainer>
       <OptionContainer>
         <OptionLabel>Background color </OptionLabel>
-        <ColorPickerButton
-          className={`${bgColor === GradientConstants.Gray ? "activeBg" : ""}`}
-          type="color"
-          color={GradientConstants.Gray}
-          value={bgColor}
-          onClick={() => handleColorChange("Gray")}
-        />
-        <ColorPickerButton
-          className={`${
-            bgColor === GradientConstants.Purple ? "activeBg" : ""
-          }`}
-          color={GradientConstants.Purple}
-          value={bgColor}
-          onClick={() => handleColorChange("Purple")}
-        />
+      {Object.keys(GradientConstants).map(colorKey => (
+          <ColorPickerButton
+            key={colorKey}
+            className={`${bgColor === GradientConstants[colorKey] ? "activeBg" : ""}`}
+            color={GradientConstants[colorKey]}
+            value={bgColor}
+            onClick={() => handleColorChange(colorKey)}
+            aria-label={`Select ${colorKey} background`}
+          />
+        ))}
       </OptionContainer>
       <OptionContainer>
         <OptionLabel>Layout: </OptionLabel>
-        <LayoutPickerButton
-          className={`${
-            layout === LayoutConstants.Horizontal
-              ? "activeLayout"
-              : !layout
-              ? "activeLayout"
-              : ""
-          }`}
-          layoutType={LayoutConstants.Horizontal}
-          onClick={() => handleLayoutChange("Horizontal")}
-        >
-          Horizontal
-        </LayoutPickerButton>
-        <LayoutPickerButton
-          className={`${
-            layout === LayoutConstants.Vertical ? "activeLayout" : ""
-          }`}
-          layoutType={LayoutConstants.Vertical}
-          onClick={() => handleLayoutChange("Vertical")}
-        >
-          Vertical
-        </LayoutPickerButton>
+        {Object.keys(LayoutConstants).map(layoutKey => (
+          <LayoutPickerButton
+            key={layoutKey}
+            className={`${layout === LayoutConstants[layoutKey] ? "activeLayout" : ""}`}
+            layoutType={LayoutConstants[layoutKey]}
+            onClick={() => handleLayoutChange(layoutKey)}
+            aria-label={`Select ${layoutKey} layout`}
+          >
+            {layoutKey}
+          </LayoutPickerButton>
+        ))}
       </OptionContainer>
       <OptionContainer>
         <OptionLabel>Font</OptionLabel>

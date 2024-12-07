@@ -59,10 +59,11 @@ const ColorPickerButton = styled.button`
   background: ${(props) => props.color};
   cursor: pointer;
 
-  &.activeBg {
+  ${props => props.isActive && `
     border: 2px solid rgb(9, 113, 241);
     border-radius: 50px;
-  }
+  `}
+
 `;
 
 const LayoutPickerButton = styled.button`
@@ -73,10 +74,11 @@ const LayoutPickerButton = styled.button`
   cursor: pointer;
   transition: all 0.3s;
 
-  &.activeLayout {
+  ${props => props.isActive && `
     background: rgb(9, 113, 241);
     color: #fff;
-  }
+  `}
+
 `;
 
 export { CardFieldsContainer, Input, Label, OptionsContainer, OptionContainer, OptionLabel, ColorPickerButton, LayoutPickerButton };

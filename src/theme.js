@@ -15,3 +15,8 @@ export const LayoutConstants = {
     direction: "row"
   }
 };
+
+export const TextColorConstants = {
+  White: "#FFFFFF",
+  Black: "#000000"
+};

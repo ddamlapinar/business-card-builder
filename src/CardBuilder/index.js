@@ -1,6 +1,6 @@
 import Card from "../CardPreview";
 import React, { useState } from "react";
-import { GradientConstants, LayoutConstants } from "../theme";
+import { GradientConstants, LayoutConstants, TextColorConstants } from "../theme";
 import CardEditor from "./CardEditor"
 
 export default function CardBuilder() {
@@ -12,6 +12,7 @@ export default function CardBuilder() {
     company: "",
     website: "",
     bgColor: GradientConstants.Gray,
+    textColor: TextColorConstants.White,
     layout: LayoutConstants.Horizontal,
     font: "Roboto"
   });

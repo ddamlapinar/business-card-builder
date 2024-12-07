@@ -5,10 +5,10 @@ import {
   OptionContainer,
   LayoutPickerButton
 } from "./StyledCardBuilder";
-import { GradientConstants, LayoutConstants } from "../theme";
+import { GradientConstants, LayoutConstants, TextColorConstants } from "../theme";
 import FontPicker from "./FontPicker";
 const CardDesigner = ({
-  cardData: { bgColor, layout },
+  cardData: { bgColor, textColor, layout },
   setCardData
 }) => {
 
@@ -17,9 +17,14 @@ const CardDesigner = ({
     setCardData(prev => ({ ...prev, font: value }));
   };
 
-  const handleColorChange = (gradient) => {
+  const handleBgColorChange = (gradient) => {
     setCardData(prev => ({ ...prev, bgColor: GradientConstants[gradient] }));
   };
+
+  const handleTextColorChange = (textColor) => {
+    setCardData(prev => ({ ...prev, textColor: TextColorConstants[textColor] }));
+  };
+
 
   const handleLayoutChange = (layout) => {
     setCardData(prev => ({ ...prev, layout: LayoutConstants[layout] }));
@@ -33,11 +38,24 @@ const CardDesigner = ({
       {Object.keys(GradientConstants).map(colorKey => (
           <ColorPickerButton
             key={colorKey}
-            className={`${bgColor === GradientConstants[colorKey] ? "activeBg" : ""}`}
+            isActive={bgColor === GradientConstants[colorKey]}
             color={GradientConstants[colorKey]}
             value={bgColor}
-            onClick={() => handleColorChange(colorKey)}
+            onClick={() => handleBgColorChange(colorKey)}
             aria-label={`Select ${colorKey} background`}
+          />
+        ))}
+      </OptionContainer>
+      <OptionContainer>
+        <OptionLabel>Text color </OptionLabel>
+        {Object.keys(TextColorConstants).map(colorKey => (
+          <ColorPickerButton
+            key={colorKey}
+            isActive={textColor === TextColorConstants[colorKey]}
+            color={TextColorConstants[colorKey]}
+            value={textColor}
+            onClick={() => handleTextColorChange(colorKey)}
+            aria-label={`Select ${colorKey} text color`}
           />
         ))}
       </OptionContainer>

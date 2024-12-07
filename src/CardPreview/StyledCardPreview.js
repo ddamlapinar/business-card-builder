@@ -5,6 +5,7 @@ const CardContainer = styled.div`
   width: ${(props) => props.layout.width};
   height: ${(props) => props.layout.height};
   background: ${(props) => props.bgColor};
+  color: ${(props) => props.textColor};
   font-family: ${(props) => props.font}, sans-serif;
   box-shadow: 8px 10px 16px 0px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
@@ -50,7 +51,6 @@ const CardField = styled.div`
   display: flex;
   font-size: 14px;
   line-height: 1.25rem;
-  color: #f1f2f3;
 
   &[contenteditable="true"] {
     &:focus {
@@ -61,7 +61,6 @@ const CardField = styled.div`
 
 const CardLabel = styled.div`
   font-weight: 700;
-  color: #f1f2f3;
   font-size: 14px;
   line-height: 1.25rem;
 `;

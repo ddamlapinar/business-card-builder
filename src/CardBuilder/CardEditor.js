@@ -1,25 +1,25 @@
-import PropTypes from "prop-types";
-import CardDesigner from "./CardDesigner";
-import CardInputs from "./CardInputs";
-import { TabButton, TabsButtonContainer, TabsContainer } from "./Tabs";
-import { useState } from "react";
+import PropTypes from 'prop-types';
+import CardDesigner from './CardDesigner';
+import CardInputs from './CardInputs';
+import { TabButton, TabsButtonContainer, TabsContainer } from './Tabs';
+import { useState } from 'react';
 
 const CardEditor = ({ cardData, setCardData,handleInputChange, handleFileInputChange }) => {
-  const [activeTab, setActiveTab] = useState("design");
+  const [activeTab, setActiveTab] = useState('design');
   return (
     <>
       <TabsContainer>
         <TabsButtonContainer>
-          <TabButton active={activeTab === "design"} onClick={() => setActiveTab("design")}>Design</TabButton>
-          <TabButton active={activeTab === "content"} onClick={() => setActiveTab("content")}>Content</TabButton>
+          <TabButton active={activeTab === 'design'} onClick={() => setActiveTab('design')}>Design</TabButton>
+          <TabButton active={activeTab === 'content'} onClick={() => setActiveTab('content')}>Content</TabButton>
         </TabsButtonContainer>
-        {activeTab === "design" && (
+        {activeTab === 'design' && (
           <CardDesigner
             cardData={cardData}
             setCardData={setCardData}
           />
         )}
-        {activeTab === "content" && (
+        {activeTab === 'content' && (
           <CardInputs
             handleFileInputChange={handleFileInputChange}
             handleInputChange={handleInputChange}

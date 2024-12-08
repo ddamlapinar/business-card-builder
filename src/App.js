@@ -1,5 +1,5 @@
-import CardBuilder from "./CardBuilder";
-import GlobalStyle from "./GlobalStyle";
+import CardBuilder from './CardBuilder';
+import GlobalStyle from './GlobalStyle';
 export default function App() {
   return (
     <>

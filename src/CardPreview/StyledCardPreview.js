@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 const CardContainer = styled.div`
   display: flex;
   flex-direction: ${(props) => props.layout.direction};
@@ -17,9 +17,9 @@ const CardContainer = styled.div`
 
 CardContainer.defaultProps = {
   layout: {
-    width: "18rem",
-    height: "10rem",
-    direction: "row"
+    width: '18rem',
+    height: '10rem',
+    direction: 'row'
   }
 };
 

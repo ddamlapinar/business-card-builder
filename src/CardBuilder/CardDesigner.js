@@ -4,9 +4,9 @@ import {
   OptionsContainer,
   OptionContainer,
   LayoutPickerButton
-} from "./StyledCardBuilder";
-import { GradientConstants, LayoutConstants, TextColorConstants } from "../theme";
-import FontPicker from "./FontPicker";
+} from './StyledCardBuilder';
+import { GradientConstants, LayoutConstants, TextColorConstants } from '../theme';
+import FontPicker from './FontPicker';
 const CardDesigner = ({
   cardData: { bgColor, textColor, layout },
   setCardData
@@ -35,7 +35,7 @@ const CardDesigner = ({
     <OptionsContainer>
       <OptionContainer>
         <OptionLabel>Background color </OptionLabel>
-      {Object.keys(GradientConstants).map(colorKey => (
+        {Object.keys(GradientConstants).map(colorKey => (
           <ColorPickerButton
             key={colorKey}
             isActive={bgColor === GradientConstants[colorKey]}
@@ -64,7 +64,7 @@ const CardDesigner = ({
         {Object.keys(LayoutConstants).map(layoutKey => (
           <LayoutPickerButton
             key={layoutKey}
-            className={`${layout === LayoutConstants[layoutKey] ? "activeLayout" : ""}`}
+            className={`${layout === LayoutConstants[layoutKey] ? 'activeLayout' : ''}`}
             layoutType={LayoutConstants[layoutKey]}
             onClick={() => handleLayoutChange(layoutKey)}
             aria-label={`Select ${layoutKey} layout`}

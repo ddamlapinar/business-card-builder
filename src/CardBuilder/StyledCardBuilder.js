@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const CardFieldsContainer = styled.div`
   display: flex;
@@ -16,10 +16,10 @@ const CardFieldsContainer = styled.div`
 const Input = styled.input`
   width: 320px;
   background: #fff;
-  border: 1px ${(props) => (props.isFileInput ? "dashed" : "solid")} #c8ceed;
+  border: 1px ${(props) => (props.isFileInput ? 'dashed' : 'solid')} #c8ceed;
   border-radius: 4px;
-  padding: ${(props) => (props.isFileInput ? "60px" : "8px")};
-  grid-column: ${(props) => (props.isFileInput ? "1fr" : "2fr")};
+  padding: ${(props) => (props.isFileInput ? '60px' : '8px')};
+  grid-column: ${(props) => (props.isFileInput ? '1fr' : '2fr')};
 `;
 
 const Label = styled.label`

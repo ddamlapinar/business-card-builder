@@ -1,20 +1,20 @@
-import Card from "../CardPreview";
-import React, { useState } from "react";
-import { GradientConstants, LayoutConstants, TextColorConstants } from "../theme";
-import CardEditor from "./CardEditor"
+import Card from '../CardPreview';
+import React, { useState } from 'react';
+import { GradientConstants, LayoutConstants, TextColorConstants } from '../theme';
+import CardEditor from './CardEditor';
 
 export default function CardBuilder() {
   const [cardData, setCardData] = useState({
-    imageUrl: "",
-    firstName: "",
-    surname: "",
-    phone: "",
-    company: "",
-    website: "",
+    imageUrl: '',
+    firstName: '',
+    surname: '',
+    phone: '',
+    company: '',
+    website: '',
     bgColor: GradientConstants.Gray,
     textColor: TextColorConstants.White,
     layout: LayoutConstants.Horizontal,
-    font: "Roboto"
+    font: 'Roboto'
   });
 
   
@@ -33,17 +33,17 @@ export default function CardBuilder() {
     if (!files || !files[0]) {
       return;
     }
-      const oldUrl = cardData.imageUrl;
+    const oldUrl = cardData.imageUrl;
 
-      if (oldUrl && oldUrl.startsWith("blob:")) {
-        URL.revokeObjectURL(cardData.imageUrl);
-      }
+    if (oldUrl && oldUrl.startsWith('blob:')) {
+      URL.revokeObjectURL(cardData.imageUrl);
+    }
       
-      const newUrl = URL.createObjectURL(files[0]);
-      setCardData(prev => ({
-        ...prev,
-       imageUrl: newUrl
-      }));
+    const newUrl = URL.createObjectURL(files[0]);
+    setCardData(prev => ({
+      ...prev,
+      imageUrl: newUrl
+    }));
   };
   return (
     <div className="App">

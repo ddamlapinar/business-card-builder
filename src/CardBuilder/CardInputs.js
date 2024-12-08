@@ -1,4 +1,4 @@
-import { CardFieldsContainer, Label, Input } from "./StyledCardBuilder";
+import { CardFieldsContainer, Label, Input } from './StyledCardBuilder';
 
 const FORM_FIELDS = [
   { id:'firstName', name: 'firstName', label: 'Name', type: 'text', handler: 'handleInputChange' },
@@ -14,22 +14,22 @@ const FORM_FIELDS = [
     handler: 'handleFileInputChange',
     accept: 'image/*'
   },
-]
+];
 
 const CardInputs = ({ handleFileInputChange, handleInputChange }) => {
   return (
     <CardFieldsContainer>
-          {FORM_FIELDS.map(({id,name,label,type,handler,...rest}) => (
-            <Label key={id} htmlFor={id}>
-              {label}
-              <Input id={id} 
-                type={type} 
-                name={name} 
-                onChange={handler === 'handleFileInputChange' ? handleFileInputChange : handleInputChange} 
-                {...rest}
-              />
-            </Label>
-          ))}
+      {FORM_FIELDS.map(({id,name,label,type,handler,...rest}) => (
+        <Label key={id} htmlFor={id}>
+          {label}
+          <Input id={id} 
+            type={type} 
+            name={name} 
+            onChange={handler === 'handleFileInputChange' ? handleFileInputChange : handleInputChange} 
+            {...rest}
+          />
+        </Label>
+      ))}
     </CardFieldsContainer>
   );
 };

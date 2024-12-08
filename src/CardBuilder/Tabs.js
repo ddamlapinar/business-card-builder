@@ -1,5 +1,5 @@
 // business-card-builder/src/CardBuilder/Tabs.js
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const TabsContainer = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const TabsButtonContainer = styled.div`
 const TabButton = styled.button`
   padding: 8px 12px;
   cursor: pointer;
-  background-color: ${({ active }) => (active ? "#e0e0e0" : "#fff")};
+  background-color: ${({ active }) => (active ? '#e0e0e0' : '#fff')};
   border: none;
   outline: none;
   transition: background-color 0.3s;
